@@ -1,0 +1,67 @@
+graph TB
+    subgraph "Users"
+        SR[Sales Representatives]
+        PA[Pharmacists/Admins]
+        SA[System Administrators]
+    end
+    
+    subgraph "Web Interface"
+        OUI[Order Management]
+        IUI[Inventory Management]
+        AUI[Analytics Dashboard]
+        UUI[User Management]
+    end
+    
+    subgraph "Core System"
+        DJ[Django Web Application]
+        AR[ARIMA Forecasting Engine]
+        API[REST API]
+        AUTH[Authentication System]
+        CART[Cart Management]
+        STOCK[Stock Management]
+        FORECAST[Forecast Generation]
+    end
+    
+    subgraph "Database"
+        DB[(System Database)]
+    end
+    
+    %% User to Interface connections
+    SR --> OUI
+    PA --> IUI
+    PA --> AUI
+    SA --> UUI
+    SA --> AUI
+    
+    %% Interface to Core System
+    OUI --> DJ
+    IUI --> DJ
+    AUI --> DJ
+    UUI --> DJ
+    
+    %% Core System connections
+    DJ --> API
+    DJ --> AR
+    DJ --> AUTH
+    DJ --> CART
+    DJ --> STOCK
+    DJ --> FORECAST
+    
+    %% Core System to Database
+    API --> DB
+    AR --> DB
+    AUTH --> DB
+    CART --> DB
+    STOCK --> DB
+    FORECAST --> DB
+    
+    %% Styling
+    classDef userClass fill:#e1f5fe
+    classDef interfaceClass fill:#f3e5f5
+    classDef coreClass fill:#e8f5e8
+    classDef dataClass fill:#fff3e0
+    
+    class SR,PA,SA userClass
+    class OUI,IUI,AUI,UUI interfaceClass
+    class DJ,AR,API,AUTH,CART,STOCK,FORECAST coreClass
+    class DB dataClass

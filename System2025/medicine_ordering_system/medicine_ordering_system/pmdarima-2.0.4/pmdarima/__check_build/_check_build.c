@@ -4,7 +4,7 @@
 {
     "distutils": {
         "include_dirs": [
-            "C:\\Users\\Ace Gutierrez\\Documents\\System2025\\medicine_ordering_system\\medicine_ordering_system\\venv\\Lib\\site-packages\\numpy\\_core\\include"
+            "C:\\Users\\Ace Gutierrez\\Videos\\medecine_oncare\\System2025\\medicine_ordering_system\\medicine_ordering_system\\venv\\Lib\\site-packages\\numpy\\_core\\include"
         ],
         "name": "pmdarima.__check_build._check_build",
         "sources": [

@@ -1,0 +1,23 @@
+@startuml Order Management Use Case Diagram
+left to right direction
+actor "Sales Representative" as SalesRep
+
+package "Order Management" {
+    (Create New Order) as UC1
+    (View Order List) as UC2
+    (View Order Details) as UC3
+    (Edit Order) as UC4
+    (Cancel Order) as UC5
+    (View Order Status) as UC6
+}
+
+SalesRep --> UC1
+SalesRep --> UC2
+SalesRep --> UC3
+SalesRep --> UC4
+SalesRep --> UC5
+SalesRep --> UC6
+@enduml
+
+--------------------------
+

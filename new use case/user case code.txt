@@ -1,0 +1,622 @@
+1. Sales Representative - Per Module Use Case Diagrams
+1.1 Order Management Module - Sales Representative
+
+@startuml Sales_Rep_Order_Management_Module
+
+!theme plain
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecaseStyle rectangle
+
+title Sales Representative - Order Management Module
+
+actor "Sales Representative" as SR
+
+package "Order Management" {
+    usecase "Create New Order" as UC1
+    usecase "View Order List" as UC2
+    usecase "View Order Details" as UC3
+    usecase "Edit Order" as UC4
+    usecase "Cancel Order" as UC5
+    usecase "Update Order Status" as UC6
+    usecase "Upload Prescription" as UC7
+    usecase "Verify Prescription" as UC8
+    usecase "View Order History" as UC9
+    usecase "Search Orders" as UC10
+    usecase "Filter Orders by Status" as UC11
+    usecase "Filter Orders by Date" as UC12
+}
+
+' Define relationships
+SR --> UC1 : can do
+SR --> UC2 : can do
+SR --> UC3 : can do
+SR --> UC4 : can do
+SR --> UC5 : can do
+SR --> UC6 : can do
+SR --> UC7 : can do
+SR --> UC8 : can do
+SR --> UC9 : can do
+SR --> UC10 : can do
+SR --> UC11 : can do
+SR --> UC12 : can do
+
+' Include and extend relationships
+UC1 ..> UC7 : includes
+UC2 ..> UC3 : includes
+UC2 ..> UC10 : includes
+UC2 ..> UC11 : includes
+UC2 ..> UC12 : includes
+UC4 ..> UC6 : includes
+UC9 ..> UC10 : includes
+UC9 ..> UC11 : includes
+UC9 ..> UC12 : includes
+
+' Notes
+note right of SR
+  Sales Rep Order Management:
+  - Create and manage customer orders
+  - Handle prescription uploads
+  - Update order status
+  - View order history and statistics
+  - Search and filter orders
+end note
+
+@enduml
+
+1.2 Cart Management Module - Sales Representative
+@startuml Sales_Rep_Cart_Management_Module
+
+!theme plain
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecaseStyle rectangle
+
+title Sales Representative - Cart Management Module
+
+actor "Sales Representative" as SR
+
+package "Cart Management" {
+    usecase "View Cart" as UC1
+    usecase "Add Medicine to Cart" as UC2
+    usecase "Remove Medicine from Cart" as UC3
+    usecase "Update Cart Quantity" as UC4
+    usecase "Clear Cart" as UC5
+    usecase "View Cart Total" as UC6
+    usecase "Check Cart Availability" as UC7
+    usecase "Convert Cart to Order" as UC8
+}
+
+' Define relationships
+SR --> UC1 : can do
+SR --> UC2 : can do
+SR --> UC3 : can do
+SR --> UC4 : can do
+SR --> UC5 : can do
+SR --> UC6 : can do
+SR --> UC7 : can do
+SR --> UC8 : can do
+
+' Include and extend relationships
+UC1 ..> UC2 : includes
+UC1 ..> UC3 : includes
+UC1 ..> UC4 : includes
+UC1 ..> UC5 : includes
+UC1 ..> UC6 : includes
+UC1 ..> UC7 : includes
+UC8 ..> UC1 : includes
+UC8 ..> UC7 : includes
+
+' Notes
+note right of SR
+  Sales Rep Cart Management:
+  - Manage shopping cart for customers
+  - Add/remove medicines
+  - Update quantities
+  - Check stock availability
+  - Convert cart to order
+end note
+
+@enduml
+
+1.3 Medicine Catalog Module - Sales Representative
+@startuml Sales_Rep_Medicine_Catalog_Module
+
+!theme plain
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecaseStyle rectangle
+
+title Sales Representative - Medicine Catalog Module
+
+actor "Sales Representative" as SR
+
+package "Medicine Catalog" {
+    usecase "View Medicine List" as UC1
+    usecase "View Medicine Details" as UC2
+    usecase "Search Medicines" as UC3
+    usecase "Filter by Category" as UC4
+    usecase "Filter by Manufacturer" as UC5
+    usecase "Filter by Prescription Type" as UC6
+    usecase "Sort Medicines" as UC7
+    usecase "View Medicine Images" as UC8
+    usecase "Check Medicine Availability" as UC9
+    usecase "View Medicine Pricing" as UC10
+}
+
+' Define relationships
+SR --> UC1 : can do
+SR --> UC2 : can do
+SR --> UC3 : can do
+SR --> UC4 : can do
+SR --> UC5 : can do
+SR --> UC6 : can do
+SR --> UC7 : can do
+SR --> UC8 : can do
+SR --> UC9 : can do
+SR --> UC10 : can do
+
+' Include and extend relationships
+UC1 ..> UC2 : includes
+UC1 ..> UC3 : includes
+UC1 ..> UC4 : includes
+UC1 ..> UC5 : includes
+UC1 ..> UC6 : includes
+UC1 ..> UC7 : includes
+UC2 ..> UC8 : includes
+UC2 ..> UC9 : includes
+UC2 ..> UC10 : includes
+
+' Notes
+note right of SR
+  Sales Rep Medicine Catalog:
+  - View medicine information (read-only)
+  - Search and filter medicines
+  - Check availability and pricing
+  - Cannot create/edit/delete medicines
+end note
+
+@enduml
+
+2. Pharmacist/Admin - Per Module Use Case Diagrams
+2.1 Inventory Management Module - Pharmacist/Admin
+@startuml Pharmacist_Admin_Inventory_Management_Module
+
+!theme plain
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecaseStyle rectangle
+
+title Pharmacist/Admin - Inventory Management Module
+
+actor "Pharmacist/Admin" as PA
+
+package "Inventory Management" {
+    usecase "View Inventory Dashboard" as UC1
+    usecase "View Medicine List" as UC2
+    usecase "View Medicine Details" as UC3
+    usecase "Create Medicine" as UC4
+    usecase "Edit Medicine" as UC5
+    usecase "Delete Medicine" as UC6
+    usecase "View Low Stock Medicines" as UC7
+    usecase "View Stock Movements" as UC8
+    usecase "Create Stock Movement" as UC9
+    usecase "View Reorder Alerts" as UC10
+    usecase "Process Reorder Alerts" as UC11
+    usecase "Update Stock Levels" as UC12
+    usecase "View Medicine Images" as UC13
+    usecase "Manage Medicine Status" as UC14
+}
+
+' Define relationships
+PA --> UC1 : can do
+PA --> UC2 : can do
+PA --> UC3 : can do
+PA --> UC4 : can do
+PA --> UC5 : can do
+PA --> UC6 : can do
+PA --> UC7 : can do
+PA --> UC8 : can do
+PA --> UC9 : can do
+PA --> UC10 : can do
+PA --> UC11 : can do
+PA --> UC12 : can do
+PA --> UC13 : can do
+PA --> UC14 : can do
+
+' Include and extend relationships
+UC1 ..> UC2 : includes
+UC1 ..> UC7 : includes
+UC1 ..> UC8 : includes
+UC1 ..> UC10 : includes
+UC2 ..> UC3 : includes
+UC4 ..> UC5 : includes
+UC3 ..> UC13 : includes
+UC5 ..> UC12 : includes
+UC5 ..> UC14 : includes
+UC10 ..> UC11 : includes
+
+' Notes
+note right of PA
+  Pharmacist/Admin Inventory Management:
+  - Full CRUD operations on medicines
+  - Manage stock levels and movements
+  - Handle reorder alerts
+  - Monitor inventory status
+  - Full inventory control
+end note
+
+@enduml
+
+2.2 Analytics and Forecasting Module - Pharmacist/Admin
+@startuml Pharmacist_Admin_Analytics_Forecasting_Module
+
+!theme plain
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecaseStyle rectangle
+
+title Pharmacist/Admin - Analytics and Forecasting Module
+
+actor "Pharmacist/Admin" as PA
+
+package "Analytics and Forecasting" {
+    usecase "View Analytics Dashboard" as UC1
+    usecase "View Forecast Only" as UC2
+    usecase "View Model Evaluation" as UC3
+    usecase "Generate Forecast" as UC4
+    usecase "View Sales Trends" as UC5
+    usecase "View Inventory Optimization" as UC6
+    usecase "View System Metrics" as UC7
+    usecase "View Reorder Alerts" as UC8
+    usecase "View ARIMA Demonstration" as UC9
+    usecase "View ARIMA Step Analysis" as UC10
+    usecase "Generate Bulk Forecasts" as UC11
+    usecase "Extend Forecasts" as UC12
+    usecase "View Forecast Details" as UC13
+    usecase "Delete Forecast" as UC14
+    usecase "Export Forecast Data" as UC15
+}
+
+' Define relationships
+PA --> UC1 : can do
+PA --> UC2 : can do
+PA --> UC3 : can do
+PA --> UC4 : can do
+PA --> UC5 : can do
+PA --> UC6 : can do
+PA --> UC7 : can do
+PA --> UC8 : can do
+PA --> UC9 : can do
+PA --> UC10 : can do
+PA --> UC11 : can do
+PA --> UC12 : can do
+PA --> UC13 : can do
+PA --> UC14 : can do
+PA --> UC15 : can do
+
+' Include and extend relationships
+UC1 ..> UC2 : includes
+UC1 ..> UC3 : includes
+UC1 ..> UC4 : includes
+UC1 ..> UC5 : includes
+UC1 ..> UC6 : includes
+UC1 ..> UC7 : includes
+UC1 ..> UC8 : includes
+UC2 ..> UC4 : includes
+UC3 ..> UC4 : includes
+UC4 ..> UC13 : includes
+UC4 ..> UC14 : includes
+UC4 ..> UC15 : includes
+UC9 ..> UC10 : includes
+UC11 ..> UC4 : includes
+UC12 ..> UC4 : includes
+
+' Notes
+note right of PA
+  Pharmacist/Admin Analytics:
+  - ARIMA forecasting capabilities
+  - Model evaluation and assessment
+  - Sales trend analysis
+  - Inventory optimization
+  - System metrics monitoring
+  - Full analytics access
+end note
+
+@enduml
+
+2.3 Category Management Module - Pharmacist/Admin
+@startuml Pharmacist_Admin_Category_Management_Module
+
+!theme plain
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecaseStyle rectangle
+
+title Pharmacist/Admin - Category Management Module
+
+actor "Pharmacist/Admin" as PA
+
+package "Category Management" {
+    usecase "View Categories" as UC1
+    usecase "Create Category" as UC2
+    usecase "Edit Category" as UC3
+    usecase "Delete Category" as UC4
+    usecase "View Category Details" as UC5
+    usecase "Search Categories" as UC6
+    usecase "Sort Categories" as UC7
+    usecase "Manage Category Hierarchy" as UC8
+    usecase "Activate/Deactivate Category" as UC9
+}
+
+' Define relationships
+PA --> UC1 : can do
+PA --> UC2 : can do
+PA --> UC3 : can do
+PA --> UC4 : can do
+PA --> UC5 : can do
+PA --> UC6 : can do
+PA --> UC7 : can do
+PA --> UC8 : can do
+PA --> UC9 : can do
+
+' Include and extend relationships
+UC1 ..> UC5 : includes
+UC1 ..> UC6 : includes
+UC1 ..> UC7 : includes
+UC2 ..> UC5 : includes
+UC3 ..> UC5 : includes
+UC4 ..> UC5 : includes
+UC8 ..> UC2 : includes
+UC8 ..> UC3 : includes
+UC9 ..> UC3 : includes
+
+' Notes
+note right of PA
+  Pharmacist/Admin Category Management:
+  - Full CRUD operations on categories
+  - Manage category hierarchy
+  - Search and sort categories
+  - Activate/deactivate categories
+  - Full category control
+end note
+
+@enduml
+
+3. System Administrator - Per Module Use Case Diagrams
+3.1 User Management Module - System Administrator
+@startuml System_Admin_User_Management_Module
+
+!theme plain
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecaseStyle rectangle
+
+title System Administrator - User Management Module
+
+actor "System Administrator" as SA
+
+package "User Management" {
+    usecase "View User List" as UC1
+    usecase "View User Details" as UC2
+    usecase "Create User Account" as UC3
+    usecase "Edit User Profile" as UC4
+    usecase "Delete User Account" as UC5
+    usecase "Activate/Deactivate Account" as UC6
+    usecase "Reset User Password" as UC7
+    usecase "Manage User Verification" as UC8
+    usecase "Assign User Roles" as UC9
+    usecase "Modify User Permissions" as UC10
+    usecase "Search Users" as UC11
+    usecase "Filter Users by Role" as UC12
+    usecase "Filter Users by Status" as UC13
+    usecase "Export User Data" as UC14
+    usecase "Bulk User Operations" as UC15
+}
+
+' Define relationships
+SA --> UC1 : can do
+SA --> UC2 : can do
+SA --> UC3 : can do
+SA --> UC4 : can do
+SA --> UC5 : can do
+SA --> UC6 : can do
+SA --> UC7 : can do
+SA --> UC8 : can do
+SA --> UC9 : can do
+SA --> UC10 : can do
+SA --> UC11 : can do
+SA --> UC12 : can do
+SA --> UC13 : can do
+SA --> UC14 : can do
+SA --> UC15 : can do
+
+' Include and extend relationships
+UC1 ..> UC2 : includes
+UC1 ..> UC11 : includes
+UC1 ..> UC12 : includes
+UC1 ..> UC13 : includes
+UC3 ..> UC9 : includes
+UC4 ..> UC9 : includes
+UC4 ..> UC10 : includes
+UC5 ..> UC6 : includes
+UC6 ..> UC4 : includes
+UC7 ..> UC4 : includes
+UC8 ..> UC4 : includes
+UC15 ..> UC6 : includes
+UC15 ..> UC9 : includes
+UC15 ..> UC10 : includes
+
+' Notes
+note right of SA
+  System Admin User Management:
+  - Full user account management
+  - Role and permission assignment
+  - User verification management
+  - Bulk operations
+  - User data export
+  - Complete user control
+end note
+
+@enduml
+
+3.2 System Administration Module - System Administrator
+@startuml System_Admin_System_Administration_Module
+
+!theme plain
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecaseStyle rectangle
+
+title System Administrator - System Administration Module
+
+actor "System Administrator" as SA
+
+package "System Administration" {
+    usecase "View Admin Dashboard" as UC1
+    usecase "View System Health" as UC2
+    usecase "Manage System Maintenance" as UC3
+    usecase "View User Activity Logs" as UC4
+    usecase "Manage System Alerts" as UC5
+    usecase "Create Admin Reports" as UC6
+    usecase "Execute Reports" as UC7
+    usecase "Manage Dashboard Widgets" as UC8
+    usecase "Acknowledge Alerts" as UC9
+    usecase "Resolve Alerts" as UC10
+    usecase "View System Metrics" as UC11
+    usecase "Monitor System Performance" as UC12
+    usecase "Manage System Configuration" as UC13
+    usecase "Schedule Maintenance" as UC14
+    usecase "View System Logs" as UC15
+    usecase "Export System Data" as UC16
+    usecase "Backup System Data" as UC17
+    usecase "Restore System Data" as UC18
+}
+
+' Define relationships
+SA --> UC1 : can do
+SA --> UC2 : can do
+SA --> UC3 : can do
+SA --> UC4 : can do
+SA --> UC5 : can do
+SA --> UC6 : can do
+SA --> UC7 : can do
+SA --> UC8 : can do
+SA --> UC9 : can do
+SA --> UC10 : can do
+SA --> UC11 : can do
+SA --> UC12 : can do
+SA --> UC13 : can do
+SA --> UC14 : can do
+SA --> UC15 : can do
+SA --> UC16 : can do
+SA --> UC17 : can do
+SA --> UC18 : can do
+
+' Include and extend relationships
+UC1 ..> UC2 : includes
+UC1 ..> UC11 : includes
+UC1 ..> UC12 : includes
+UC3 ..> UC14 : includes
+UC5 ..> UC9 : includes
+UC5 ..> UC10 : includes
+UC6 ..> UC7 : includes
+UC7 ..> UC16 : includes
+UC12 ..> UC15 : includes
+UC13 ..> UC14 : includes
+UC17 ..> UC16 : includes
+UC18 ..> UC17 : includes
+
+' Notes
+note right of SA
+  System Admin Administration:
+  - Complete system oversight
+  - Health monitoring
+  - Maintenance management
+  - Alert handling
+  - Report generation
+  - System configuration
+  - Data backup/restore
+  - Full system control
+end note
+
+@enduml
+
+3.3 Report Management Module - System Administrator
+@startuml System_Admin_Report_Management_Module
+
+!theme plain
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+skinparam usecaseStyle rectangle
+
+title System Administrator - Report Management Module
+
+actor "System Administrator" as SA
+
+package "Report Management" {
+    usecase "View Report List" as UC1
+    usecase "Create Custom Report" as UC2
+    usecase "Edit Report Configuration" as UC3
+    usecase "Delete Report" as UC4
+    usecase "Execute Report" as UC5
+    usecase "Schedule Report" as UC6
+    usecase "View Report Details" as UC7
+    usecase "Export Report" as UC8
+    usecase "Email Report" as UC9
+    usecase "View Report History" as UC10
+    usecase "Generate Sales Report" as UC11
+    usecase "Generate Inventory Report" as UC12
+    usecase "Generate User Report" as UC13
+    usecase "Generate Financial Report" as UC14
+    usecase "Generate Compliance Report" as UC15
+    usecase "Generate Operational Report" as UC16
+}
+
+' Define relationships
+SA --> UC1 : can do
+SA --> UC2 : can do
+SA --> UC3 : can do
+SA --> UC4 : can do
+SA --> UC5 : can do
+SA --> UC6 : can do
+SA --> UC7 : can do
+SA --> UC8 : can do
+SA --> UC9 : can do
+SA --> UC10 : can do
+SA --> UC11 : can do
+SA --> UC12 : can do
+SA --> UC13 : can do
+SA --> UC14 : can do
+SA --> UC15 : can do
+SA --> UC16 : can do
+
+' Include and extend relationships
+UC1 ..> UC7 : includes
+UC1 ..> UC10 : includes
+UC2 ..> UC7 : includes
+UC3 ..> UC7 : includes
+UC5 ..> UC7 : includes
+UC5 ..> UC8 : includes
+UC5 ..> UC9 : includes
+UC6 ..> UC5 : includes
+UC11 ..> UC5 : includes
+UC12 ..> UC5 : includes
+UC13 ..> UC5 : includes
+UC14 ..> UC5 : includes
+UC15 ..> UC5 : includes
+UC16 ..> UC5 : includes
+
+' Notes
+note right of SA
+  System Admin Report Management:
+  - Create and manage custom reports
+  - Schedule automated reports
+  - Generate various report types
+  - Export and email reports
+  - View report history
+  - Full reporting control
+end note
+
+@enduml
+

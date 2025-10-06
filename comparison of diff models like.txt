@@ -1,0 +1,14 @@
+comparison of diff models like
+ARIMA
+
+why i choose ARIMA?
+is there a model that is like 
+ARIMA that has an automatic model
+generation like pmdarima?
+
+I choose ARIMA because it
+has pmdarima that can easily
+general model for forecasting
+
+is it enough for simple stock
+or demand forecasting?
