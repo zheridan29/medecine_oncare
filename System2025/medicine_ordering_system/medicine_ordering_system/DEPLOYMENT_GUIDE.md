@@ -1,243 +1,217 @@
-# Deployment Guide - OnCare Medicine Ordering System
+# ON-CARE Medicine Ordering System - Production Deployment Guide
 
-## 🚀 Production Deployment
+## Overview
+This guide provides step-by-step instructions for deploying the ON-CARE Medicine Ordering System to production environment.
 
-This guide covers deploying the OnCare Medicine Ordering System to production environments.
-
-## 📋 Prerequisites
+## Prerequisites
 
 ### System Requirements
-- **OS**: Ubuntu 20.04+ / CentOS 8+ / RHEL 8+
-- **RAM**: Minimum 4GB, Recommended 8GB+
-- **CPU**: Minimum 2 cores, Recommended 4+ cores
-- **Storage**: Minimum 50GB SSD
+- **Operating System**: Ubuntu 20.04 LTS or CentOS 8+
 - **Python**: 3.8 or higher
-- **MariaDB**: 10.3 or higher
-- **Redis**: 6.0 or higher
-- **Nginx**: 1.18 or higher
+- **Database**: MySQL 8.0 or MariaDB 10.4+
+- **Web Server**: Nginx 1.18+
+- **Application Server**: Gunicorn or uWSGI
+- **Cache**: Redis 6.0+
+- **Memory**: Minimum 4GB RAM
+- **Storage**: Minimum 50GB SSD
 
 ### Software Dependencies
 ```bash
-# Ubuntu/Debian
-sudo apt update
-sudo apt install python3.8 python3.8-venv python3.8-dev
-sudo apt install mariadb-server redis-server nginx
-sudo apt install build-essential libssl-dev libffi-dev
+# Update system packages
+sudo apt update && sudo apt upgrade -y
 
-# CentOS/RHEL
-sudo yum update
-sudo yum install python38 python38-devel
-sudo yum install mariadb-server redis nginx
-sudo yum groupinstall "Development Tools"
-```
+# Install Python and pip
+sudo apt install python3.8 python3.8-pip python3.8-venv -y
 
-## 🐳 Docker Deployment (Recommended)
+# Install MySQL
+sudo apt install mysql-server mysql-client -y
 
-### 1. Create Dockerfile
-```dockerfile
-FROM python:3.8-slim
+# Install Nginx
+sudo apt install nginx -y
 
-WORKDIR /app
+# Install Redis
+sudo apt install redis-server -y
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
-    gcc \
-    default-libmysqlclient-dev \
-    pkg-config \
-    && rm -rf /var/lib/apt/lists/*
-
-# Copy requirements and install Python dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy project files
-COPY . .
-
-# Collect static files
-RUN python manage.py collectstatic --noinput
-
-# Expose port
-EXPOSE 8000
-
-# Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "medicine_ordering_system.wsgi:application"]
+sudo apt install build-essential libmysqlclient-dev pkg-config -y
 ```
 
-### 2. Create docker-compose.yml
-```yaml
-version: '3.8'
+## Step 1: Database Setup
 
-services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-    environment:
-      - DEBUG=False
-      - DATABASE_URL=mysql://root:password@db:3306/medicine_ordering_db
-      - REDIS_URL=redis://redis:6379
-    depends_on:
-      - db
-      - redis
-    volumes:
-      - ./media:/app/media
-      - ./static:/app/static
+### 1.1 Create MySQL Database and User
+```sql
+-- Connect to MySQL as root
+sudo mysql -u root -p
 
-  db:
-    image: mariadb:10.6
-    environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=medicine_ordering_db
-    volumes:
-      - db_data:/var/lib/mysql
-    ports:
-      - "3306:3306"
+-- Create database
+CREATE DATABASE oncare_production_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-  redis:
-    image: redis:6.2-alpine
-    ports:
-      - "6379:6379"
+-- Create user
+CREATE USER 'oncare_user'@'localhost' IDENTIFIED BY 'your_secure_password';
 
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./static:/app/static
-      - ./media:/app/media
-      - ./ssl:/etc/nginx/ssl
-    depends_on:
-      - web
+-- Grant privileges
+GRANT ALL PRIVILEGES ON oncare_production_db.* TO 'oncare_user'@'localhost';
+FLUSH PRIVILEGES;
 
-volumes:
-  db_data:
+-- Exit MySQL
+EXIT;
 ```
 
-### 3. Deploy with Docker
+### 1.2 Test Database Connection
 ```bash
-# Build and start services
-docker-compose up -d
-
-# Run migrations
-docker-compose exec web python manage.py migrate
-
-# Create superuser
-docker-compose exec web python manage.py createsuperuser
-
-# Collect static files
-docker-compose exec web python manage.py collectstatic --noinput
+mysql -u oncare_user -p oncare_production_db
 ```
 
-## 🖥️ Manual Deployment
+## Step 2: Application Deployment
 
-### 1. Server Setup
+### 2.1 Create Application Directory
 ```bash
-# Create application user
-sudo useradd -m -s /bin/bash oncare
-sudo usermod -aG sudo oncare
-
-# Switch to application user
-sudo su - oncare
+sudo mkdir -p /opt/oncare
+sudo chown $USER:$USER /opt/oncare
+cd /opt/oncare
 ```
 
-### 2. Application Setup
+### 2.2 Clone and Setup Application
 ```bash
-# Clone repository
-git clone <repository-url> /home/oncare/medicine_ordering_system
-cd /home/oncare/medicine_ordering_system
+# Clone the repository (adjust URL as needed)
+git clone <repository-url> medicine_ordering_system
+cd medicine_ordering_system
 
 # Create virtual environment
 python3.8 -m venv venv
 source venv/bin/activate
 
 # Install dependencies
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 3. Database Configuration
+### 2.3 Environment Configuration
 ```bash
-# Create database
-sudo mysql -u root -p
-CREATE DATABASE medicine_ordering_db;
-CREATE USER 'oncare_user'@'localhost' IDENTIFIED BY 'secure_password';
-GRANT ALL PRIVILEGES ON medicine_ordering_db.* TO 'oncare_user'@'localhost';
-FLUSH PRIVILEGES;
-EXIT;
-```
+# Create environment file
+cat > .env << EOF
+# Database Configuration
+DB_NAME=oncare_production_db
+DB_USER=oncare_user
+DB_PASSWORD=your_secure_password
+DB_HOST=localhost
+DB_PORT=3306
 
-### 4. Environment Configuration
-```bash
-# Create production settings
-cp medicine_ordering_system/settings.py medicine_ordering_system/settings_production.py
-```
+# Django Configuration
+DJANGO_SECRET_KEY=your_super_secure_secret_key_here
+DJANGO_DEBUG=False
+DJANGO_ALLOWED_HOSTS=yourdomain.com,www.yourdomain.com
 
-Update `settings_production.py`:
-```python
-import os
-from .settings import *
+# Email Configuration
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_HOST_USER=your_email@gmail.com
+EMAIL_HOST_PASSWORD=your_app_password
 
-DEBUG = False
-ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com']
-
-# Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'medicine_ordering_db',
-        'USER': 'oncare_user',
-        'PASSWORD': 'secure_password',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+# Redis Configuration
+REDIS_URL=redis://localhost:6379/1
+CELERY_BROKER_URL=redis://localhost:6379/0
+CELERY_RESULT_BACKEND=redis://localhost:6379/0
 
 # Security
-SECRET_KEY = os.environ.get('SECRET_KEY')
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 31536000
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY'
-
-# Static files
-STATIC_ROOT = '/home/oncare/medicine_ordering_system/staticfiles'
-MEDIA_ROOT = '/home/oncare/medicine_ordering_system/media'
-
-# Redis
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379/1',
-    }
-}
-
-# Celery
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+SECURE_SSL_REDIRECT=True
+SESSION_COOKIE_SECURE=True
+CSRF_COOKIE_SECURE=True
+EOF
 ```
 
-### 5. Database Migration
+### 2.4 Database Migration
 ```bash
-# Set production settings
-export DJANGO_SETTINGS_MODULE=medicine_ordering_system.settings_production
-
 # Run migrations
-python manage.py migrate
+python manage.py migrate --settings=medicine_ordering_system.production_settings
 
 # Create superuser
-python manage.py createsuperuser
+python manage.py createsuperuser --settings=medicine_ordering_system.production_settings
 
 # Collect static files
-python manage.py collectstatic --noinput
+python manage.py collectstatic --settings=medicine_ordering_system.production_settings --noinput
 ```
 
-### 6. Gunicorn Configuration
-Create `/home/oncare/medicine_ordering_system/gunicorn.conf.py`:
-```python
+## Step 3: Web Server Configuration
+
+### 3.1 Configure Nginx
+```bash
+sudo nano /etc/nginx/sites-available/oncare
+```
+
+```nginx
+server {
+    listen 80;
+    server_name yourdomain.com www.yourdomain.com;
+    
+    # Redirect HTTP to HTTPS
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name yourdomain.com www.yourdomain.com;
+    
+    # SSL Configuration (use Let's Encrypt)
+    ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384;
+    ssl_prefer_server_ciphers off;
+    
+    # Security headers
+    add_header X-Frame-Options DENY;
+    add_header X-Content-Type-Options nosniff;
+    add_header X-XSS-Protection "1; mode=block";
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    
+    # Static files
+    location /static/ {
+        alias /opt/oncare/medicine_ordering_system/staticfiles/;
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+    
+    # Media files
+    location /media/ {
+        alias /opt/oncare/medicine_ordering_system/media/;
+        expires 1y;
+        add_header Cache-Control "public";
+    }
+    
+    # Application
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_redirect off;
+    }
+}
+```
+
+### 3.2 Enable Site and Test Configuration
+```bash
+# Enable site
+sudo ln -s /etc/nginx/sites-available/oncare /etc/nginx/sites-enabled/
+
+# Test configuration
+sudo nginx -t
+
+# Reload Nginx
+sudo systemctl reload nginx
+```
+
+## Step 4: Application Server Configuration
+
+### 4.1 Install and Configure Gunicorn
+```bash
+# Install Gunicorn
+pip install gunicorn
+
+# Create Gunicorn configuration
+cat > gunicorn_config.py << EOF
 bind = "127.0.0.1:8000"
 workers = 3
 worker_class = "sync"
@@ -247,22 +221,33 @@ max_requests_jitter = 100
 timeout = 30
 keepalive = 2
 preload_app = True
+user = "www-data"
+group = "www-data"
+daemon = False
+pidfile = "/opt/oncare/gunicorn.pid"
+accesslog = "/opt/oncare/logs/gunicorn_access.log"
+errorlog = "/opt/oncare/logs/gunicorn_error.log"
+loglevel = "info"
+EOF
 ```
 
-### 7. Systemd Service
-Create `/etc/systemd/system/oncare.service`:
+### 4.2 Create Systemd Service
+```bash
+sudo nano /etc/systemd/system/oncare.service
+```
+
 ```ini
 [Unit]
-Description=OnCare Medicine Ordering System
-After=network.target
+Description=ON-CARE Medicine Ordering System
+After=network.target mysql.service redis.service
 
 [Service]
 Type=notify
-User=oncare
-Group=oncare
-WorkingDirectory=/home/oncare/medicine_ordering_system
-Environment=DJANGO_SETTINGS_MODULE=medicine_ordering_system.settings_production
-ExecStart=/home/oncare/medicine_ordering_system/venv/bin/gunicorn --config gunicorn.conf.py medicine_ordering_system.wsgi:application
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/oncare/medicine_ordering_system
+Environment="DJANGO_SETTINGS_MODULE=medicine_ordering_system.production_settings"
+ExecStart=/opt/oncare/medicine_ordering_system/venv/bin/gunicorn --config gunicorn_config.py medicine_ordering_system.wsgi:application
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=always
 RestartSec=10
@@ -271,292 +256,280 @@ RestartSec=10
 WantedBy=multi-user.target
 ```
 
-### 8. Nginx Configuration
-Create `/etc/nginx/sites-available/oncare`:
-```nginx
-server {
-    listen 80;
-    server_name yourdomain.com www.yourdomain.com;
-    return 301 https://$server_name$request_uri;
-}
+### 4.3 Enable and Start Services
+```bash
+# Enable services
+sudo systemctl enable oncare.service
+sudo systemctl enable nginx.service
+sudo systemctl enable mysql.service
+sudo systemctl enable redis.service
 
-server {
-    listen 443 ssl http2;
-    server_name yourdomain.com www.yourdomain.com;
+# Start services
+sudo systemctl start oncare.service
+sudo systemctl start nginx.service
+sudo systemctl start mysql.service
+sudo systemctl start redis.service
 
-    ssl_certificate /etc/nginx/ssl/cert.pem;
-    ssl_certificate_key /etc/nginx/ssl/key.pem;
-    ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384;
-    ssl_prefer_server_ciphers off;
-
-    client_max_body_size 20M;
-
-    location / {
-        proxy_pass http://127.0.0.1:8000;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-
-    location /static/ {
-        alias /home/oncare/medicine_ordering_system/staticfiles/;
-        expires 1y;
-        add_header Cache-Control "public, immutable";
-    }
-
-    location /media/ {
-        alias /home/oncare/medicine_ordering_system/media/;
-        expires 1y;
-        add_header Cache-Control "public, immutable";
-    }
-}
+# Check status
+sudo systemctl status oncare.service
 ```
 
-### 9. SSL Certificate (Let's Encrypt)
-```bash
-# Install Certbot
-sudo apt install certbot python3-certbot-nginx
+## Step 5: SSL Certificate Setup
 
-# Obtain certificate
+### 5.1 Install Certbot
+```bash
+sudo apt install certbot python3-certbot-nginx -y
+```
+
+### 5.2 Obtain SSL Certificate
+```bash
 sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+```
 
-# Auto-renewal
+### 5.3 Setup Auto-renewal
+```bash
 sudo crontab -e
-# Add: 0 12 * * * /usr/bin/certbot renew --quiet
+# Add this line:
+0 12 * * * /usr/bin/certbot renew --quiet
 ```
 
-### 10. Start Services
+## Step 6: Monitoring and Logging
+
+### 6.1 Setup Log Rotation
 ```bash
-# Enable and start services
-sudo systemctl enable oncare
-sudo systemctl start oncare
-sudo systemctl enable nginx
-sudo systemctl start nginx
-sudo systemctl enable redis
-sudo systemctl start redis
-sudo systemctl enable mariadb
-sudo systemctl start mariadb
-```
-
-## 🔧 Production Configuration
-
-### Environment Variables
-Create `/home/oncare/.env`:
-```env
-SECRET_KEY=your-super-secret-key-here
-DEBUG=False
-DATABASE_URL=mysql://oncare_user:secure_password@localhost:3306/medicine_ordering_db
-REDIS_URL=redis://localhost:6379
-ALLOWED_HOSTS=yourdomain.com,www.yourdomain.com
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER=your-email@gmail.com
-EMAIL_HOST_PASSWORD=your-app-password
-```
-
-### Celery Worker Setup
-Create `/etc/systemd/system/oncare-celery.service`:
-```ini
-[Unit]
-Description=OnCare Celery Worker
-After=network.target
-
-[Service]
-Type=forking
-User=oncare
-Group=oncare
-WorkingDirectory=/home/oncare/medicine_ordering_system
-Environment=DJANGO_SETTINGS_MODULE=medicine_ordering_system.settings_production
-ExecStart=/home/oncare/medicine_ordering_system/venv/bin/celery -A medicine_ordering_system worker --loglevel=info --pidfile=/tmp/celery.pid --detach
-ExecStop=/bin/kill -s TERM $MAINPID
-Restart=always
-RestartSec=10
-
-[Install]
-WantedBy=multi-user.target
-```
-
-### Monitoring Setup
-Install monitoring tools:
-```bash
-# Install htop for system monitoring
-sudo apt install htop
-
-# Install log monitoring
-sudo apt install logrotate
-
-# Configure log rotation
 sudo nano /etc/logrotate.d/oncare
 ```
 
-Add to `/etc/logrotate.d/oncare`:
 ```
-/home/oncare/medicine_ordering_system/logs/*.log {
+/opt/oncare/logs/*.log {
     daily
     missingok
     rotate 52
     compress
     delaycompress
     notifempty
-    create 644 oncare oncare
+    create 644 www-data www-data
+    postrotate
+        systemctl reload oncare
+    endscript
 }
 ```
 
-## 🔍 Health Checks
-
-### Application Health
+### 6.2 Install Monitoring Tools
 ```bash
-# Check application status
-curl -f http://localhost:8000/health/ || echo "Application is down"
+# Install htop for system monitoring
+sudo apt install htop -y
+
+# Install fail2ban for security
+sudo apt install fail2ban -y
+```
+
+### 6.3 Configure Fail2ban
+```bash
+sudo nano /etc/fail2ban/jail.local
+```
+
+```ini
+[DEFAULT]
+bantime = 3600
+findtime = 600
+maxretry = 5
+
+[nginx-http-auth]
+enabled = true
+
+[nginx-limit-req]
+enabled = true
+```
+
+## Step 7: Backup Configuration
+
+### 7.1 Database Backup Script
+```bash
+cat > /opt/oncare/backup_db.sh << 'EOF'
+#!/bin/bash
+BACKUP_DIR="/opt/oncare/backups"
+DATE=$(date +%Y%m%d_%H%M%S)
+DB_NAME="oncare_production_db"
+DB_USER="oncare_user"
+
+mkdir -p $BACKUP_DIR
+
+# Database backup
+mysqldump -u $DB_USER -p$DB_PASSWORD $DB_NAME | gzip > $BACKUP_DIR/db_backup_$DATE.sql.gz
+
+# Keep only last 30 days of backups
+find $BACKUP_DIR -name "db_backup_*.sql.gz" -mtime +30 -delete
+
+echo "Database backup completed: db_backup_$DATE.sql.gz"
+EOF
+
+chmod +x /opt/oncare/backup_db.sh
+```
+
+### 7.2 Setup Automated Backups
+```bash
+# Add to crontab
+sudo crontab -e
+# Add this line for daily backups at 2 AM:
+0 2 * * * /opt/oncare/backup_db.sh
+```
+
+## Step 8: Performance Optimization
+
+### 8.1 MySQL Optimization
+```bash
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+
+```ini
+[mysqld]
+innodb_buffer_pool_size = 1G
+innodb_log_file_size = 256M
+innodb_flush_log_at_trx_commit = 2
+query_cache_size = 128M
+query_cache_type = 1
+max_connections = 200
+```
+
+### 8.2 Redis Optimization
+```bash
+sudo nano /etc/redis/redis.conf
+```
+
+```ini
+maxmemory 256mb
+maxmemory-policy allkeys-lru
+save 900 1
+save 300 10
+save 60 10000
+```
+
+## Step 9: Security Hardening
+
+### 9.1 Firewall Configuration
+```bash
+# Install UFW
+sudo apt install ufw -y
+
+# Configure firewall
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw enable
+```
+
+### 9.2 SSH Security
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+```
+PermitRootLogin no
+PasswordAuthentication no
+PubkeyAuthentication yes
+Port 2222
+```
+
+## Step 10: Health Checks and Maintenance
+
+### 10.1 Health Check Script
+```bash
+cat > /opt/oncare/health_check.sh << 'EOF'
+#!/bin/bash
+
+# Check if services are running
+services=("nginx" "mysql" "redis" "oncare")
+
+for service in "${services[@]}"; do
+    if ! systemctl is-active --quiet $service; then
+        echo "ERROR: $service is not running"
+        systemctl restart $service
+    else
+        echo "OK: $service is running"
+    fi
+done
 
 # Check database connection
-python manage.py check --database default
+if ! mysql -u oncare_user -p$DB_PASSWORD -e "SELECT 1;" oncare_production_db > /dev/null 2>&1; then
+    echo "ERROR: Database connection failed"
+else
+    echo "OK: Database connection successful"
+fi
 
-# Check Redis connection
-python manage.py shell -c "from django.core.cache import cache; cache.set('test', 'value'); print(cache.get('test'))"
+# Check application response
+if ! curl -f http://localhost:8000/ > /dev/null 2>&1; then
+    echo "ERROR: Application not responding"
+else
+    echo "OK: Application is responding"
+fi
+EOF
+
+chmod +x /opt/oncare/health_check.sh
 ```
 
-### System Health
+### 10.2 Setup Monitoring Alerts
 ```bash
-# Check disk space
-df -h
-
-# Check memory usage
-free -h
-
-# Check running processes
-ps aux | grep gunicorn
-ps aux | grep celery
-ps aux | grep nginx
+# Add health check to crontab
+sudo crontab -e
+# Add this line for every 5 minutes:
+*/5 * * * * /opt/oncare/health_check.sh >> /opt/oncare/logs/health_check.log
 ```
 
-## 🚨 Troubleshooting
+## Post-Deployment Checklist
+
+- [ ] Database migrations completed successfully
+- [ ] Static files collected and served correctly
+- [ ] SSL certificate installed and working
+- [ ] All services running and healthy
+- [ ] Firewall configured and enabled
+- [ ] Backups configured and tested
+- [ ] Monitoring and logging setup
+- [ ] Performance optimization applied
+- [ ] Security hardening completed
+- [ ] Health checks passing
+
+## Troubleshooting
 
 ### Common Issues
 
-1. **Database Connection Error**
-   ```bash
-   # Check MariaDB status
-   sudo systemctl status mariadb
-   
-   # Check database permissions
-   mysql -u oncare_user -p -e "SHOW DATABASES;"
-   ```
+1. **Database Connection Errors**
+   - Check MySQL service status
+   - Verify database credentials
+   - Check firewall rules
 
 2. **Static Files Not Loading**
-   ```bash
-   # Collect static files
-   python manage.py collectstatic --noinput
-   
-   # Check Nginx configuration
-   sudo nginx -t
-   ```
+   - Verify STATIC_ROOT configuration
+   - Check Nginx static file configuration
+   - Ensure proper file permissions
 
-3. **Celery Worker Not Running**
-   ```bash
-   # Check Celery status
-   sudo systemctl status oncare-celery
-   
-   # Check Redis connection
-   redis-cli ping
-   ```
+3. **SSL Certificate Issues**
+   - Verify domain DNS configuration
+   - Check Certbot logs
+   - Ensure port 80 is accessible
 
-4. **SSL Certificate Issues**
-   ```bash
-   # Test SSL configuration
-   openssl s_client -connect yourdomain.com:443
-   
-   # Renew certificate
-   sudo certbot renew
-   ```
+4. **Application Not Starting**
+   - Check Gunicorn logs
+   - Verify Python dependencies
+   - Check file permissions
 
-### Log Files
-- Application logs: `/home/oncare/medicine_ordering_system/logs/`
+### Log Locations
+- Application logs: `/opt/oncare/logs/`
 - Nginx logs: `/var/log/nginx/`
+- MySQL logs: `/var/log/mysql/`
 - System logs: `/var/log/syslog`
-- MariaDB logs: `/var/log/mysql/`
 
-## 📊 Performance Monitoring
+## Support and Maintenance
 
-### Application Metrics
-```bash
-# Monitor Gunicorn processes
-ps aux | grep gunicorn
-
-# Monitor memory usage
-free -h
-
-# Monitor disk I/O
-iostat -x 1
-```
-
-### Database Monitoring
-```sql
--- Check database size
-SELECT 
-    table_schema AS 'Database',
-    ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS 'Size (MB)'
-FROM information_schema.tables
-WHERE table_schema = 'medicine_ordering_db'
-GROUP BY table_schema;
-
--- Check slow queries
-SHOW VARIABLES LIKE 'slow_query_log';
-SHOW VARIABLES LIKE 'long_query_time';
-```
-
-## 🔄 Backup and Recovery
-
-### Database Backup
-```bash
-# Create backup script
-cat > /home/oncare/backup_db.sh << 'EOF'
-#!/bin/bash
-DATE=$(date +%Y%m%d_%H%M%S)
-BACKUP_DIR="/home/oncare/backups"
-mkdir -p $BACKUP_DIR
-
-mysqldump -u oncare_user -p medicine_ordering_db > $BACKUP_DIR/db_backup_$DATE.sql
-gzip $BACKUP_DIR/db_backup_$DATE.sql
-
-# Keep only last 7 days of backups
-find $BACKUP_DIR -name "db_backup_*.sql.gz" -mtime +7 -delete
-EOF
-
-chmod +x /home/oncare/backup_db.sh
-
-# Schedule daily backups
-crontab -e
-# Add: 0 2 * * * /home/oncare/backup_db.sh
-```
-
-### Media Files Backup
-```bash
-# Backup media files
-rsync -av /home/oncare/medicine_ordering_system/media/ /backup/media/
-```
-
-## 🎯 Scaling Considerations
-
-### Horizontal Scaling
-- Use load balancer (HAProxy/Nginx)
-- Multiple application servers
-- Database read replicas
-- Redis cluster
-
-### Vertical Scaling
-- Increase server resources
-- Optimize database queries
-- Implement caching strategies
-- Use CDN for static files
+For ongoing maintenance:
+1. Regular security updates
+2. Database optimization
+3. Log monitoring and cleanup
+4. Performance monitoring
+5. Backup verification
 
 ---
 
-**Deployment completed successfully! 🎉**
-
-For additional support, refer to the troubleshooting section or contact the development team.
-
-
+**Note**: This deployment guide is designed for a production environment. Always test in a staging environment first and ensure you have proper backups before deploying to production.

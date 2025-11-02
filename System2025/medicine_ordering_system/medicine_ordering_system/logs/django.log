@@ -8135,3 +8135,2264 @@ Forbidden: /orders/api/cart/
 Forbidden: /orders/api/cart/
 "GET /orders/api/cart/ HTTP/1.1" 403 67
 "GET /common/api/notifications/ HTTP/1.1" 200 21
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 7916
+"GET /static/js/common.js HTTP/1.1" 200 12581
+"GET /static/css/custom.css HTTP/1.1" 200 7627
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3941
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 15254
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 7916
+"GET /static/js/common.js HTTP/1.1" 200 12581
+"GET /static/css/custom.css HTTP/1.1" 200 7627
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3941
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 9133
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 10555
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: user-defined function raised exception
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 228, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Users\Ace Gutierrez\Videos\Nov 2025\medecine_oncare\System2025\medicine_ordering_system\medicine_ordering_system\medicine_ordering_system\views.py", line 30, in get_context_data
+    context.update(self.get_admin_context())
+                   ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\Videos\Nov 2025\medecine_oncare\System2025\medicine_ordering_system\medicine_ordering_system\medicine_ordering_system\views.py", line 48, in get_admin_context
+    'recent_orders': Order.objects.filter(created_at__date=today).count(),
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: user-defined function raised exception
+"GET / HTTP/1.1" 500 159964
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 7916
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3687
+"GET /static/admin/css/login.css HTTP/1.1" 200 951
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+"GET /static/admin/css/base.css HTTP/1.1" 200 22120
+"GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+"GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+"GET /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 200 14125
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/manufacturers/ HTTP/1.1" 200 26255
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/orders/ HTTP/1.1" 200 30641
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /transactions/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'report_sales' not found. 'report_sales' is not a valid view function or pattern name.
+"GET /transactions/ HTTP/1.1" 500 161793
+Internal Server Error: /transactions/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'report_sales' not found. 'report_sales' is not a valid view function or pattern name.
+"GET /transactions/ HTTP/1.1" 500 161793
+"GET /audits/ HTTP/1.1" 200 13139
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /audits/security-events/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/securityevent_list.html, audits/securityevent_list.html
+"GET /audits/security-events/ HTTP/1.1" 500 90308
+Internal Server Error: /audits/compliance/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/compliancelog_list.html, audits/compliancelog_list.html
+"GET /audits/compliance/ HTTP/1.1" 500 90263
+"GET /audits/logs/ HTTP/1.1" 200 10496
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3687
+"POST /admin/login/?next=/admin/ HTTP/1.1" 200 3855
+"POST /admin/login/?next=/admin/ HTTP/1.1" 200 3855
+"POST /admin/login/?next=/admin/ HTTP/1.1" 200 3855
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3687
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 10555
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 15254
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 8285
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 9133
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /audits/system-health/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/systemhealth_list.html, audits/systemhealth_list.html
+"GET /audits/system-health/ HTTP/1.1" 500 90256
+Internal Server Error: /audits/security-events/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/securityevent_list.html, audits/securityevent_list.html
+"GET /audits/security-events/ HTTP/1.1" 500 90314
+"GET /audits/logs/ HTTP/1.1" 200 10496
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /transactions/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'report_sales' not found. 'report_sales' is not a valid view function or pattern name.
+"GET /transactions/ HTTP/1.1" 500 161792
+"GET /orders/orders/ HTTP/1.1" 200 30641
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 200 14125
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/stock-movements/create/ HTTP/1.1" 200 10635
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/orders/ HTTP/1.1" 200 30641
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/orders/96014/ HTTP/1.1" 200 16529
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/ HTTP/1.1" 200 67277
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/system-metrics/ HTTP/1.1" 200 142
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3453
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/forecast-only/ HTTP/1.1" 200 42361
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/model-evaluation/ HTTP/1.1" 200 62438
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/arima-demonstration/ HTTP/1.1" 200 31832
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /analytics/api/arima-analysis/?medicine_id=4&period_type=monthly HTTP/1.1" 200 795223
+- Broken pipe from ('127.0.0.1', 65109)
+"GET /analytics/arima-step-by-step/ HTTP/1.1" 200 31228
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/arima-step-analysis/?medicine_id=4&period_type=monthly&step=1 HTTP/1.1" 200 495010
+"GET /analytics/api/arima-step-analysis/?medicine_id=4&period_type=monthly&step=1 HTTP/1.1" 200 495010
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 10555
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"GET /accounts/register/ HTTP/1.1" 200 13097
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/register/ HTTP/1.1" 200 13615
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/register/ HTTP/1.1" 302 0
+"GET /accounts/login/ HTTP/1.1" 200 8763
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/ HTTP/1.1" 302 0
+"GET /inventory/ HTTP/1.1" 200 12685
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 9104
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /audits/ HTTP/1.1" 200 13139
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /audits/logs/ HTTP/1.1" 200 10496
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /audits/security-events/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/securityevent_list.html, audits/securityevent_list.html
+"GET /audits/security-events/ HTTP/1.1" 500 90308
+Internal Server Error: /audits/security-events/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/securityevent_list.html, audits/securityevent_list.html
+"GET /audits/security-events/ HTTP/1.1" 500 90308
+Internal Server Error: /audits/system-health/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/systemhealth_list.html, audits/systemhealth_list.html
+"GET /audits/system-health/ HTTP/1.1" 500 90250
+Internal Server Error: /audits/security-events/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/securityevent_list.html, audits/securityevent_list.html
+"GET /audits/security-events/ HTTP/1.1" 500 90308
+"GET /audits/logs/ HTTP/1.1" 200 10496
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /audits/logs/ HTTP/1.1" 200 10496
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Watching for file changes with StatReloader
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 10555
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3687
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/login.css HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"POST /admin/login/?next=/admin/ HTTP/1.1" 200 3855
+"POST /admin/login/?next=/admin/ HTTP/1.1" 200 3855
+"POST /admin/login/?next=/admin/ HTTP/1.1" 200 3855
+Watching for file changes with StatReloader
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 5537
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+"GET /admin/auth/ HTTP/1.1" 200 5557
+"GET /admin/ HTTP/1.1" 200 5537
+"GET /admin/auth/group/add/ HTTP/1.1" 200 23536
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+"GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+"GET /static/admin/js/core.js HTTP/1.1" 200 6208
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+"GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+"GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+"GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+"GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+"GET /admin/auth/group/ HTTP/1.1" 200 7334
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+"GET /static/admin/js/filters.js HTTP/1.1" 200 978
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+"GET /admin/auth/ HTTP/1.1" 200 5557
+"GET /admin/auth/ HTTP/1.1" 200 5557
+"GET /admin/auth/group/ HTTP/1.1" 200 7334
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/group/ HTTP/1.1" 200 7334
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/group/add/ HTTP/1.1" 200 23536
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/ HTTP/1.1" 200 5537
+"GET /admin/ HTTP/1.1" 200 5537
+"GET / HTTP/1.1" 200 11089
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /admin/ HTTP/1.1" 200 5537
+"GET /admin/password_change/ HTTP/1.1" 200 7027
+"GET /admin/ HTTP/1.1" 200 5537
+"GET / HTTP/1.1" 200 11089
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 8282
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 10560
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 8282
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+Internal Server Error: /audits/security-events/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/securityevent_list.html, audits/securityevent_list.html
+"GET /audits/security-events/ HTTP/1.1" 500 90314
+"GET /inventory/ HTTP/1.1" 200 14125
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/manufacturers/ HTTP/1.1" 200 26255
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /transactions/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'report_sales' not found. 'report_sales' is not a valid view function or pattern name.
+"GET /transactions/ HTTP/1.1" 500 161803
+"GET /orders/orders/ HTTP/1.1" 200 30641
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/manufacturers/ HTTP/1.1" 200 26255
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 200 14125
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /orders/orders/ HTTP/1.1" 200 30641
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /transactions/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'report_sales' not found. 'report_sales' is not a valid view function or pattern name.
+"GET /transactions/ HTTP/1.1" 500 161793
+"GET /audits/ HTTP/1.1" 200 13139
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /audits/security-events/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/securityevent_list.html, audits/securityevent_list.html
+"GET /audits/security-events/ HTTP/1.1" 500 90308
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 10555
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/dashboard/ HTTP/1.1" 200 30533
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/96014/ HTTP/1.1" 200 12836
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/orders/96014/status/ HTTP/1.1" 200 12395
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/ HTTP/1.1" 200 71186
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/?status=&payment_status=pending&medicine=&search= HTTP/1.1" 200 15582
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/dashboard/ HTTP/1.1" 200 30533
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 9133
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: user-defined function raised exception
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 228, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Users\Ace Gutierrez\Videos\Nov 2025\medecine_oncare\System2025\medicine_ordering_system\medicine_ordering_system\medicine_ordering_system\views.py", line 32, in get_context_data
+    context.update(self.get_pharmacist_admin_context())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\Videos\Nov 2025\medecine_oncare\System2025\medicine_ordering_system\medicine_ordering_system\medicine_ordering_system\views.py", line 64, in get_pharmacist_admin_context
+    'recent_orders': Order.objects.filter(created_at__date=today).count(),
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: user-defined function raised exception
+"GET / HTTP/1.1" 500 160024
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: user-defined function raised exception
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 228, in get
+    context = self.get_context_data(**kwargs)
+  File "C:\Users\Ace Gutierrez\Videos\Nov 2025\medecine_oncare\System2025\medicine_ordering_system\medicine_ordering_system\medicine_ordering_system\views.py", line 32, in get_context_data
+    context.update(self.get_pharmacist_admin_context())
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\Videos\Nov 2025\medecine_oncare\System2025\medicine_ordering_system\medicine_ordering_system\medicine_ordering_system\views.py", line 64, in get_pharmacist_admin_context
+    'recent_orders': Order.objects.filter(created_at__date=today).count(),
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: user-defined function raised exception
+"GET / HTTP/1.1" 500 160024
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/inventory/ HTTP/1.1" 200 7916
+"GET /static/css/custom.css HTTP/1.1" 200 7627
+"GET /static/js/common.js HTTP/1.1" 200 12581
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/inventory/ HTTP/1.1" 200 7934
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+Internal Server Error: /inventory/stock-movements/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: inventory/stock_movement_list.html, inventory/stockmovement_list.html
+"GET /inventory/stock-movements/ HTTP/1.1" 500 90491
+"GET /orders/pharmacist/dashboard/ HTTP/1.1" 200 30533
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/96014/ HTTP/1.1" 200 12836
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/ HTTP/1.1" 200 71186
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/dashboard/ HTTP/1.1" 200 30533
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/dashboard/ HTTP/1.1" 200 30533
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/ HTTP/1.1" 200 71186
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/?status=&payment_status=pending&medicine=&search= HTTP/1.1" 200 15582
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/ HTTP/1.1" 200 71186
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/login/?next=/inventory/ HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 15254
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/ HTTP/1.1" 200 28370
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?status=pending&date_from=&date_to= HTTP/1.1" 200 28408
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?page=4802&status=pending HTTP/1.1" 200 20805
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/ HTTP/1.1" 200 28370
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?status=&date_from=2025-11-02&date_to=2025-11-02 HTTP/1.1" 200 28470
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?status=pending&date_from=2025-11-02&date_to=2025-11-02 HTTP/1.1" 200 28508
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/cart/ HTTP/1.1" 200 9413
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/ HTTP/1.1" 200 28370
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?status=pending&date_from=&date_to= HTTP/1.1" 200 28408
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?status=pending&date_from=2025-07-29&date_to=2025-11-02 HTTP/1.1" 200 28508
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?status=delivered&date_from=2025-07-29&date_to=2025-11-02 HTTP/1.1" 200 28512
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/ HTTP/1.1" 200 15254
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/ HTTP/1.1" 200 15254
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/create/ HTTP/1.1" 200 26677
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /inventory/api/medicines/3/ HTTP/1.1" 200 561
+"GET /inventory/api/medicines/3/ HTTP/1.1" 200 561
+"POST /orders/orders/create/ HTTP/1.1" 302 0
+"GET /orders/orders/ HTTP/1.1" 200 28841
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/cart/ HTTP/1.1" 200 9413
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/ HTTP/1.1" 200 28370
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?status=&date_from=2025-11-02&date_to=2025-11-02 HTTP/1.1" 200 28470
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?page=4802&date_from=2025-11-02&date_to=2025-11-02 HTTP/1.1" 200 21821
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?page=1&date_from=2025-11-02&date_to=2025-11-02 HTTP/1.1" 200 28470
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?page=2&date_from=2025-11-02&date_to=2025-11-02 HTTP/1.1" 200 28960
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?page=3&date_from=2025-11-02&date_to=2025-11-02 HTTP/1.1" 200 28960
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/orders/?page=4&date_from=2025-11-02&date_to=2025-11-02 HTTP/1.1" 200 28960
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/?status=&date_from=2025-11-02&date_to=2025-11-04 HTTP/1.1" 200 28470
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/ HTTP/1.1" 200 15254
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/ HTTP/1.1" 200 28370
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/cart/ HTTP/1.1" 200 9413
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"POST /orders/api/cart/add/ HTTP/1.1" 200 45
+"GET /orders/api/cart/ HTTP/1.1" 200 169
+"POST /orders/api/cart/add/ HTTP/1.1" 200 45
+"GET /orders/api/cart/ HTTP/1.1" 200 293
+"GET /orders/cart/ HTTP/1.1" 200 17915
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 293
+Not Found: /orders/api/cart/update/1/
+"PUT /orders/api/cart/update/1/ HTTP/1.1" 404 10287
+Not Found: /orders/api/cart/update/2/
+"PUT /orders/api/cart/update/2/ HTTP/1.1" 404 10287
+"GET /orders/orders/create/ HTTP/1.1" 200 27046
+"GET /inventory/api/medicines/3/ HTTP/1.1" 200 561
+"GET /orders/api/cart/ HTTP/1.1" 200 293
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/api/medicines/5/ HTTP/1.1" 200 544
+"GET /inventory/api/medicines/5/ HTTP/1.1" 200 544
+"GET /inventory/api/medicines/3/ HTTP/1.1" 200 561
+"POST /orders/orders/create/ HTTP/1.1" 302 0
+"GET /orders/orders/ HTTP/1.1" 200 28841
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /inventory/ HTTP/1.1" 200 12696
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /orders/pharmacist/dashboard/ HTTP/1.1" 200 30533
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/dashboard/ HTTP/1.1" 200 30533
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/medicines/ HTTP/1.1" 200 25255
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/categories/ HTTP/1.1" 200 23155
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/medicines/ HTTP/1.1" 200 25255
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/categories/ HTTP/1.1" 200 23155
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/manufacturers/ HTTP/1.1" 200 24826
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/categories/ HTTP/1.1" 200 23155
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/categories/create/ HTTP/1.1" 200 8380
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/categories/ HTTP/1.1" 200 23155
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/ HTTP/1.1" 200 71186
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/?status=pending&payment_status=pending&medicine=&search= HTTP/1.1" 200 21637
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/?status=pending&payment_status=paid&medicine=&search= HTTP/1.1" 200 12055
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/?status=pending&payment_status=failed&medicine=&search= HTTP/1.1" 200 12055
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/?status=pending&payment_status=&medicine=&search= HTTP/1.1" 200 21629
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/forecast-only/ HTTP/1.1" 200 40730
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/ HTTP/1.1" 200 15254
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /analytics/api/forecast/best-auto/?medicine_id=3 HTTP/1.1" 200 19014
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/cart/ HTTP/1.1" 200 9413
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/cart/ HTTP/1.1" 200 9413
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /orders/orders/ HTTP/1.1" 200 28370
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/cart/ HTTP/1.1" 200 9413
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"POST /orders/api/cart/add/ HTTP/1.1" 200 45
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/cart/ HTTP/1.1" 200 15463
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/orders/ HTTP/1.1" 200 28370
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/orders/?status=pending&date_from=&date_to= HTTP/1.1" 200 28408
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/orders/?status=pending&date_from=2025-11-02&date_to= HTTP/1.1" 200 28460
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/orders/?status=pending&date_from=2025-11-02&date_to=2025-11-02 HTTP/1.1" 200 28508
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/cart/ HTTP/1.1" 200 15463
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/orders/ HTTP/1.1" 200 28370
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/cart/ HTTP/1.1" 200 15463
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/ HTTP/1.1" 200 15254
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/cart/ HTTP/1.1" 200 15463
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/orders/ HTTP/1.1" 200 28370
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/cart/ HTTP/1.1" 200 15463
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/ HTTP/1.1" 200 15254
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/pharmacist/dashboard/ HTTP/1.1" 200 30533
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/medicines/ HTTP/1.1" 200 25255
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/categories/ HTTP/1.1" 200 23155
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/categories/3/edit/ HTTP/1.1" 200 8440
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/medicines/ HTTP/1.1" 200 24543
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /orders/cart/ HTTP/1.1" 200 15463
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/orders/create/ HTTP/1.1" 200 27037
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /inventory/api/medicines/3/ HTTP/1.1" 200 561
+"GET /inventory/api/medicines/3/ HTTP/1.1" 200 561
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 9133
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /orders/ HTTP/1.1" 200 10560
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 8282
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 47
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /audits/system-health/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/systemhealth_list.html, audits/systemhealth_list.html
+"GET /audits/system-health/ HTTP/1.1" 500 90256
+Internal Server Error: /audits/security-events/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/securityevent_list.html, audits/securityevent_list.html
+"GET /audits/security-events/ HTTP/1.1" 500 90314
+"GET /audits/logs/ HTTP/1.1" 200 10496
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 200 14125
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/medicines/create/ HTTP/1.1" 200 16070
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 200 14125
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /inventory/stock-movements/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: inventory/stock_movement_list.html, inventory/stockmovement_list.html
+"GET /inventory/stock-movements/ HTTP/1.1" 500 90477
+"GET /inventory/manufacturers/ HTTP/1.1" 200 26255
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/orders/ HTTP/1.1" 200 30641
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /transactions/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'report_sales' not found. 'report_sales' is not a valid view function or pattern name.
+"GET /transactions/ HTTP/1.1" 500 161793
+"GET /audits/ HTTP/1.1" 200 13139
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Internal Server Error: /audits/compliance/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/compliancelog_list.html, audits/compliancelog_list.html
+"GET /audits/compliance/ HTTP/1.1" 500 90263
+Internal Server Error: /audits/system-health/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: audits/systemhealth_list.html, audits/systemhealth_list.html
+"GET /audits/system-health/ HTTP/1.1" 500 90250
+"GET /audits/logs/ HTTP/1.1" 200 10496
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 10555
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/manufacturers/ HTTP/1.1" 200 24826
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/ HTTP/1.1" 200 71186
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/forecast-only/ HTTP/1.1" 200 40730
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/manufacturers/ HTTP/1.1" 200 24826
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/categories/ HTTP/1.1" 200 23155
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/medicines/ HTTP/1.1" 200 25255
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/dashboard/ HTTP/1.1" 200 30533
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/medicines/ HTTP/1.1" 200 25255
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/categories/create/ HTTP/1.1" 200 8380
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/categories/ HTTP/1.1" 200 23155
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/manufacturers/ HTTP/1.1" 200 24826
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/pharmacist/orders/ HTTP/1.1" 200 71186
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/stock-movements/create/ HTTP/1.1" 200 9206
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/ HTTP/1.1" 200 65665
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /analytics/api/system-metrics/ HTTP/1.1" 200 142
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3457
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+Forbidden (Permission denied): /oncare-admin/reports/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 134, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 48, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+"GET /oncare-admin/reports/ HTTP/1.1" 403 135
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 9133
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/ HTTP/1.1" 200 67313
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/system-metrics/ HTTP/1.1" 200 142
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3457
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+Internal Server Error: /oncare-admin/reports/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: oncare_admin/report_list.html, oncare_admin/adminreport_list.html
+"GET /oncare-admin/reports/ HTTP/1.1" 500 90353
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 10555
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/ HTTP/1.1" 200 65665
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/system-metrics/ HTTP/1.1" 200 142
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3457
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3457
+"GET /analytics/api/sales-trends/3/ HTTP/1.1" 200 82
+"GET /analytics/api/inventory-optimization/3/ HTTP/1.1" 200 330
+"POST /analytics/api/forecast/extend/ HTTP/1.1" 200 3146
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3461
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3461
+"POST /analytics/api/forecast/extend/ HTTP/1.1" 200 11336
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3462
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3462
+"POST /analytics/api/forecast/generate/ HTTP/1.1" 200 4987
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3464
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3464
+"GET /inventory/medicines/ HTTP/1.1" 200 25255
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/sales-trends/4/ HTTP/1.1" 200 82
+"GET /analytics/api/inventory-optimization/4/ HTTP/1.1" 200 329
+"POST /analytics/api/forecast/generate/ HTTP/1.1" 200 5424
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3466
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3466
+Forbidden (Permission denied): /oncare-admin/reports/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 134, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\mixins.py", line 48, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+"GET /oncare-admin/reports/ HTTP/1.1" 403 135
+"GET /analytics/api/sales-trends/4/ HTTP/1.1" 200 82
+"GET /analytics/api/inventory-optimization/4/ HTTP/1.1" 200 332
+"GET /analytics/api/sales-trends/3/ HTTP/1.1" 200 82
+"GET /analytics/api/inventory-optimization/3/ HTTP/1.1" 200 333
+"GET /analytics/api/sales-trends/3/ HTTP/1.1" 200 82
+"GET /analytics/api/inventory-optimization/3/ HTTP/1.1" 200 333
+"GET /analytics/api/sales-trends/3/ HTTP/1.1" 200 82
+"GET /analytics/api/inventory-optimization/3/ HTTP/1.1" 200 333
+"POST /analytics/api/forecast/extend/ HTTP/1.1" 200 11336
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3468
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3468
+"GET /analytics/api/system-metrics/ HTTP/1.1" 200 142
+"GET /analytics/model-evaluation/ HTTP/1.1" 200 61017
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/forecast-only/ HTTP/1.1" 200 40730
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/forecast/best-auto/?medicine_id=3 HTTP/1.1" 200 19014
+"GET /analytics/forecast-only/ HTTP/1.1" 200 40730
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/ HTTP/1.1" 200 65662
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/system-metrics/ HTTP/1.1" 200 142
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3470
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/ HTTP/1.1" 200 65662
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/system-metrics/ HTTP/1.1" 200 142
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3470
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/forecast-only/ HTTP/1.1" 200 40730
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/model-evaluation/ HTTP/1.1" 200 61011
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/forecast-only/ HTTP/1.1" 200 40730
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/ HTTP/1.1" 200 65662
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /analytics/api/system-metrics/ HTTP/1.1" 200 142
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3470
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/forecast-only/ HTTP/1.1" 200 40730
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/model-evaluation/ HTTP/1.1" 200 61011
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /inventory/ HTTP/1.1" 200 12696
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/ HTTP/1.1" 200 65662
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/system-metrics/ HTTP/1.1" 200 142
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3470
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/forecast-only/ HTTP/1.1" 200 40730
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/forecast-only/ HTTP/1.1" 200 40730
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/model-evaluation/ HTTP/1.1" 200 61013
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/ HTTP/1.1" 200 65645
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /analytics/api/system-metrics/ HTTP/1.1" 200 142
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3463
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/forecast-only/ HTTP/1.1" 200 40730
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/model-evaluation/ HTTP/1.1" 200 61012
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /analytics/forecast-only/ HTTP/1.1" 200 40730
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /orders/orders/ HTTP/1.1" 200 28370
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 8285
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 200 173
+Internal Server Error: /accounts/logout/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Ace Gutierrez\Videos\Nov 2025\medecine_oncare\System2025\medicine_ordering_system\medicine_ordering_system\accounts\views.py", line 54, in post
+    logout(request)
+    ~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 254, in logout
+    request.session.flush()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\sessions\backends\base.py", line 418, in flush
+    self.delete()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\sessions\backends\db.py", line 175, in delete
+    self.model.objects.get(session_key=session_key).delete()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1281, in delete
+    return collector.delete()
+           ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\deletion.py", line 448, in delete
+    count = sql.DeleteQuery(model).delete_batch(
+        [instance.pk], self.using
+    )
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\subqueries.py", line 42, in delete_batch
+    num_deleted += self.do_query(
+                   ~~~~~~~~~~~~~^
+        self.get_meta().db_table, self.where, using=using
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\subqueries.py", line 24, in do_query
+    return self.get_compiler(using).execute_sql(ROW_COUNT)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: database is locked
+"POST /accounts/logout/ HTTP/1.1" 500 159572
+Internal Server Error: /accounts/logout/
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Ace Gutierrez\Videos\Nov 2025\medecine_oncare\System2025\medicine_ordering_system\medicine_ordering_system\accounts\views.py", line 54, in post
+    logout(request)
+    ~~~~~~^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\auth\__init__.py", line 254, in logout
+    request.session.flush()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\sessions\backends\base.py", line 418, in flush
+    self.delete()
+    ~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\contrib\sessions\backends\db.py", line 175, in delete
+    self.model.objects.get(session_key=session_key).delete()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1281, in delete
+    return collector.delete()
+           ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\deletion.py", line 448, in delete
+    count = sql.DeleteQuery(model).delete_batch(
+        [instance.pk], self.using
+    )
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\subqueries.py", line 42, in delete_batch
+    num_deleted += self.do_query(
+                   ~~~~~~~~~~~~~^
+        self.get_meta().db_table, self.where, using=using
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\subqueries.py", line 24, in do_query
+    return self.get_compiler(using).execute_sql(ROW_COUNT)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Ace Gutierrez\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: database is locked
+"POST /accounts/logout/ HTTP/1.1" 500 159572
+- Broken pipe from ('127.0.0.1', 50069)
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /accounts/login/?next=/ HTTP/1.1" 302 0
+"GET /oncare-admin/ HTTP/1.1" 200 16016
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/ HTTP/1.1" 200 67271
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /analytics/api/system-metrics/ HTTP/1.1" 200 142
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /analytics/api/forecasts/ HTTP/1.1" 200 3442
+"GET /inventory/api/medicines/ HTTP/1.1" 200 1336
+"GET /audits/ HTTP/1.1" 200 13139
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /analytics/arima-demonstration/ HTTP/1.1" 200 31832
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /analytics/arima-step-by-step/ HTTP/1.1" 200 31228
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /analytics/api/forecast/best-auto/?medicine_id=4 HTTP/1.1" 200 20783
+"GET /analytics/api/arima-step-analysis/?medicine_id=4&period_type=monthly&step=1 HTTP/1.1" 200 495010
+"GET /analytics/arima-step-by-step/?step=2&medicine_id=4 HTTP/1.1" 200 31228
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/arima-step-analysis/?medicine_id=4&period_type=monthly&step=2 HTTP/1.1" 200 929464
+"GET /analytics/arima-step-by-step/?step=3&medicine_id=4 HTTP/1.1" 200 31228
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/arima-step-analysis/?medicine_id=4&period_type=monthly&step=3 HTTP/1.1" 200 496625
+"GET /analytics/arima-step-by-step/?step=4&medicine_id=4 HTTP/1.1" 200 31228
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/arima-step-analysis/?medicine_id=4&period_type=monthly&step=4 HTTP/1.1" 200 821923
+"GET /analytics/arima-step-by-step/?step=5&medicine_id=4 HTTP/1.1" 200 31228
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"GET /analytics/api/arima-step-analysis/?medicine_id=4&period_type=monthly&step=5 HTTP/1.1" 200 557554
+"GET /accounts/logout/confirm/ HTTP/1.1" 200 10555
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
+"POST /accounts/logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /accounts/login/?next=/ HTTP/1.1" 200 8817
+Forbidden: /orders/api/cart/
+"GET /common/api/notifications/ HTTP/1.1" 302 0
+"GET /orders/api/cart/ HTTP/1.1" 403 58
+"GET /accounts/login/?next=/common/api/notifications/ HTTP/1.1" 200 7916
+"POST /analytics/api/forecast/generate-on-demand/ HTTP/1.1" 200 5396
+"GET /analytics/model-evaluation/ HTTP/1.1" 200 60985
+Forbidden: /orders/api/cart/
+"GET /orders/api/cart/ HTTP/1.1" 403 67
+"GET /common/api/notifications/ HTTP/1.1" 200 21
